@@ -1,3 +1,7 @@
+package ProjectMyTwitter;
+
+import java.util.Vector;
+
 public interface ITwitter{
 	public void criarPerfil(Perfil usuario);
 	public void cancelarPerfil(String usuario);
