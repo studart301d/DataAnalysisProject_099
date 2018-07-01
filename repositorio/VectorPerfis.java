@@ -1,0 +1,30 @@
+package ProjectMyTwitter.repositorio;
+
+import java.util.Vector;
+
+public class VectorPerfis implements IRepositorioUsuario{
+	private Vector<Perfil> perfis;
+
+	public Vector<Perfil>(){
+		this.perfis = new Vector<Perfil>();
+	}
+
+	public void cadastrar(Perfil usuario){
+		if(buscar(usuario.getUsuario()) == null){
+			perfis.add(usuario);
+		}else{
+			//exceção UJCException
+		}
+	}
+	public Perfil buscar(String usuario){
+		for(int i = 0;i < perfis.lengh();i<i++){
+			if(perfis[i].getUsuario() == usuario){
+				return perfis[i];
+			}
+		}
+		return null;
+	}
+	public void atualizar(Perfil usuari){
+		
+	}
+}

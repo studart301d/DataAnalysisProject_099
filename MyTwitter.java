@@ -10,7 +10,7 @@ public class MyTwitter implements ITwitter{
 	}
 
 	public void criarPerfil(Perfil usuario){
-		if(repositorio.buscar(usuario) == null){
+		if(repositorio.buscar(usuario.getUsuario()) == null){
 			repositorio.cadastrar(usuario);
 		}else{
 			//exceção PEException
