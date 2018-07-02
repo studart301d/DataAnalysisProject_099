@@ -36,7 +36,7 @@ public class MyTwitter implements ITwitter{
 
 	public void tweetar(String usuario , String mensagem){
 		if(repositorio.buscar(usuario)!=null){
-			Perfil perfil = Perfil(repositorio.buscar(usuario));
+			Perfil perfil = repositorio.buscar(usuario);
 			if(mensagem.length()>=1 && mensagem.length()<=140){
 				Tweet tweet = new Tweet;
 				tweet.setUsuario(usuario);
