@@ -1,6 +1,9 @@
 package project_my_twitter;
 
 import java.util.Vector;
+import project_my_twitter.tweet.Tweet;
+import project_my_twitter.repositorio.IRepositorioUsuario;
+import project_my_twitter.perfil.*;
 
 public class MyTwitter implements ITwitter{
 	private IRepositorioUsuario repositorio; //ONDE TIVER Vector<Perfil> tem que ser trocado por repositorio

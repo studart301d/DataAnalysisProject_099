@@ -1,6 +1,9 @@
 package project_my_twitter;
 
 import java.util.Vector;
+import project_my_twitter.tweet.Tweet;
+import project_my_twitter.repositorio.IRepositorioUsuario;
+import project_my_twitter.perfil.*;
 
 public interface ITwitter{
 	public void criarPerfil(Perfil usuario);

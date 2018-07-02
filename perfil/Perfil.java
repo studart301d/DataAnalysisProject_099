@@ -1,6 +1,7 @@
 package project_my_twitter.perfil;
 
 import java.util.Vector;
+import project_my_twitter.tweet.Tweet;
 
 public abstract class Perfil{
 

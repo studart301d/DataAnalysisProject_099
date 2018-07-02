@@ -1,6 +1,7 @@
 package project_my_twitter.repositorio;
 
 import java.util.Vector;
+import project_my_twitter.perfil.Perfil;
 
 public class VectorPerfis implements IRepositorioUsuario{
 	private Vector<Perfil> perfis;
