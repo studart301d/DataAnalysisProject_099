@@ -24,7 +24,14 @@ public class VectorPerfis implements IRepositorioUsuario{
 		}
 		return null;
 	}
-	public void atualizar(Perfil usuari){
-		
+	public void atualizar(Perfil usuario){
+		if(buscar(usuario.getUsuario()) != null){
+			Perfil perfilDesatualizado = buscar(usuario.getUsuario());
+			perfis.remove(perfilDesatualizado);
+			perfis.add(usuario);
+		}else{
+			//exceção UNCException
+		}
+	}
 	}
 }
