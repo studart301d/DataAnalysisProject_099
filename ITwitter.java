@@ -1,4 +1,4 @@
-package ProjectMyTwitter;
+package project_my_twitter;
 
 import java.util.Vector;
 

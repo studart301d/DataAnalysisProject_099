@@ -1,4 +1,4 @@
-package ProjectMyTwitter.repositorio;
+package project_my_twitter.repositorio;
 
 import java.util.Vector;
 
@@ -16,6 +16,7 @@ public class VectorPerfis implements IRepositorioUsuario{
 			//exceção UJCException
 		}
 	}
+
 	public Perfil buscar(String usuario){
 		for(int i = 0;i < perfis.lengh();i<i++){
 			if(perfis[i].getUsuario() == usuario){
@@ -24,6 +25,7 @@ public class VectorPerfis implements IRepositorioUsuario{
 		}
 		return null;
 	}
+
 	public void atualizar(Perfil usuario){
 		if(buscar(usuario.getUsuario()) != null){
 			Perfil perfilDesatualizado = buscar(usuario.getUsuario());
@@ -33,5 +35,5 @@ public class VectorPerfis implements IRepositorioUsuario{
 			//exceção UNCException
 		}
 	}
-	}
+	
 }

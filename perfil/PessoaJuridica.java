@@ -1,6 +1,4 @@
-package ProjectMyTwitter.perfil;
-
-import java.util.Vector;
+package project_my_twitter.perfil;
 
 public class PessoaJuridica extends Perfil{
 
