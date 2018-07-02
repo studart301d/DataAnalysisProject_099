@@ -6,7 +6,7 @@ import project_my_twitter.repositorio.IRepositorioUsuario;
 import project_my_twitter.perfil.*;
 
 public class MyTwitter implements ITwitter{
-	private IRepositorioUsuario repositorio; //ONDE TIVER Vector<Perfil> tem que ser trocado por repositorio
+	private IRepositorioUsuario repositorio; 
 
 	public MyTwitter(IRepositorioUsuario repositorio){
 		this.repositorio = repositorio;
