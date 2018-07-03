@@ -1,0 +1,14 @@
+package project_my_twitter.exception;
+
+public class PEException extends java.lang.Exception {
+	private String usuario;
+	
+	public PEException(String usuario){
+		super("Usuario ja cadastrado");
+		this.usuario = usuario;
+	}
+	
+	public String getUsuario() {
+		return this.usuario;
+	}
+}
