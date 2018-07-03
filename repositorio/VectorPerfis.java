@@ -10,30 +10,30 @@ public class VectorPerfis implements IRepositorioUsuario{
 		this.perfis = new Vector<Perfil>();
 	}
 
-	public void cadastrar(Perfil usuario){
+	public void cadastrar(Perfil usuario) throws UJCException{
 		if(buscar(usuario.getUsuario()) == null){
 			perfis.add(usuario);
 		}else{
-			//exceção UJCException
+			throw new UJCException(usuario); //exceção UJCException
 		}
 	}
 
 	public Perfil buscar(String usuario){
 		for(int i = 0;i < perfis.lengh();i<i++){
-			if(perfis[i].getUsuario() == usuario){
-				return perfis[i];
+			if(perfis.get(i.getUsuario() == usuario){
+				return perfis.get(i);
 			}
 		}
 		return null;
 	}
 
-	public void atualizar(Perfil usuario){
+	public void atualizar(Perfil usuario) throws UNCException{
 		if(buscar(usuario.getUsuario()) != null){
 			Perfil perfilDesatualizado = buscar(usuario.getUsuario());
 			perfis.remove(perfilDesatualizado);
 			perfis.add(usuario);
 		}else{
-			//exceção UNCException
+			throw new UNCException(usuario); //exceção UNCException
 		}
 	}
 	
