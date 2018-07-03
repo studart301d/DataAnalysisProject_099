@@ -6,7 +6,7 @@ public class UJCException extends java.lang.Exception{
 	private Perfil usuario;
 	
 	public UJCException (Perfil usuario) {
-		super("Usuario ja cadastrado!");
+		super("Usuario ja cadastrado");
 		this.usuario = usuario;
 	}
 	

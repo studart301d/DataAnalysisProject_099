@@ -4,6 +4,7 @@ import java.util.Vector;
 import project_my_twitter.tweet.Tweet;
 import project_my_twitter.repositorio.IRepositorioUsuario;
 import project_my_twitter.perfil.*;
+import project_my_twitter.exception.*;
 
 public class MyTwitter implements ITwitter{
 	private IRepositorioUsuario repositorio; 
@@ -134,7 +135,8 @@ public class MyTwitter implements ITwitter{
 				Vector<Perfil> seguidoresAtivo = new Vector<Perfil>;
 				for(int i = 0; i < seguidores.size(); i++) {
 					if(seguidores.get(i).isAtivo()) {
-						seguidoresAtivo.add(seguidores.get(i);
+						seguidoresAtivo.add(seguidores.get(i));
+
 					}
 				}
 				return seguidoresAtivo;
@@ -152,8 +154,8 @@ public class MyTwitter implements ITwitter{
 				Vector<Perfil> seguidos = uperfil.getSeguidores();
 				Vector<Perfil> seguidosAtivo = new Vector<Perfil>;
 				for(int i = 0; i < seguidos.size(); i++) {
-					if(seguidos[i].isAtivo()) {
-						seguidosAtivo[i] = seguidos[i]
+					if(seguidos.get(i).isAtivo()) {
+						seguidosAtivos.add(seguidos.get(i));
 					}
 				}
 				return seguidosAtivo;

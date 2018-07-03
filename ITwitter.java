@@ -4,6 +4,7 @@ import java.util.Vector;
 import project_my_twitter.tweet.Tweet;
 import project_my_twitter.repositorio.IRepositorioUsuario;
 import project_my_twitter.perfil.*;
+import project_my_twitter.exception.*;
 
 public interface ITwitter{
 	public void criarPerfil(Perfil usuario);

@@ -4,7 +4,7 @@ public class MFPException extends java.lang.Exception{
 	private String mensagem;
 	
 	public MFPException (String mensagem) {
-		super("Mensagem grande demais!");
+		super("Mensagem grande");
 		this.mensagem = mensagem;
 	}
 	

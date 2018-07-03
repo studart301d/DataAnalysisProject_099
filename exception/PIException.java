@@ -4,7 +4,7 @@ public class PIException extends java.lang.Exception {
 		private String usuario;
 		
 		public PIException(String usuario) {
-			super("Perfil inexistente!");
+			super("Perfil inexistente");
 			this.usuario = usuario;
 		}
 		

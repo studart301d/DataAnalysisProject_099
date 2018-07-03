@@ -4,7 +4,7 @@ public class PDException extends java.lang.Exception {
 	private String usuario;
 	
 	public PDException(String usuario) {
-		super("Perfil desativado!");
+		super("Perfil desativado");
 		this.usuario = usuario;
 	}
 	
