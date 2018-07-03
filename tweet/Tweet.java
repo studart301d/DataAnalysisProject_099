@@ -21,7 +21,7 @@ public class Tweet{
 		this.mensagem = mensagem;
 	}
 
-	public void getMensagem(){
+	public String getMensagem(){
 		return this.mensagem;
 	}
 	

@@ -13,9 +13,9 @@ public abstract class Perfil{
 
 	public Perfil(String usuario){
 		this.usuario = usuario;
-		this.seguidos = new Vector<Perfil>;
-		this.seguidores = new Vector<Perfil>;
-		this.timeline = new Vector<Tweet>;
+		this.seguidos = new Vector<Perfil>();
+		this.seguidores = new Vector<Perfil>();
+		this.timeline = new Vector<Tweet>();
 		this.ativo = true;
 	}
 
@@ -32,11 +32,7 @@ public abstract class Perfil{
 	}
 
 	public void setUsuario(String usuario){
-		this.usuario = usuario
-	}
-
-	public void setUsuario(String usuario){
-		this.usuario = usuario
+		this.usuario = usuario;
 	}
 
 	public String getUsuario(){

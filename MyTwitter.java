@@ -13,10 +13,10 @@ public class MyTwitter implements ITwitter{
 		this.repositorio = repositorio;
 	}
 
-	public void criarPerfil(Perfil usuario) throws PEException{
+	public void criarPerfil(Perfil usuario) throws PEException, UJCException {
 		try{
 			repositorio.cadastrar(usuario);
-		}catch(UJCException ujce){
+		}catch (UJCException ujce){
 			throw new PEException(usuario.getUsuario()); //exceção PEException
 		}
 	}
@@ -39,14 +39,14 @@ public class MyTwitter implements ITwitter{
 		if(repositorio.buscar(usuario)!=null){
 			Perfil perfil = repositorio.buscar(usuario);
 			if(mensagem.length()>=1 && mensagem.length()<=140){
-				Tweet tweet = new Tweet;
+				Tweet tweet = new Tweet();
 				tweet.setUsuario(usuario);
 				tweet.setMensagem(mensagem);
 				perfil.addTweet(tweet);
 				Vector<Perfil> seguidores = perfil.getSeguidores();
 				for(int i = 0; i<seguidores.size();i++){
 					if(seguidores.get(i).isAtivo()){
-						seguidores.get(i).addTweet(mensagem);
+						seguidores.get(i).addTweet(tweet);
 					}// Não precisa tratar os seguidores inativos
 				}
 			}else{
@@ -74,8 +74,8 @@ public class MyTwitter implements ITwitter{
 		if(repositorio.buscar(usuario)!=null){
 			Perfil perfil = repositorio.buscar(usuario);
 			if(perfil.isAtivo()){
-				Vector<Tweet> tweets = new Vector<Tweet>;
-				Vector<Tweet> timeline = new Vector<Tweet>;
+				Vector<Tweet> tweets = new Vector<Tweet>();
+				Vector<Tweet> timeline = new Vector<Tweet>();
 				timeline = timeline(usuario); // usa o metodo da propria classe pra obter a timeline do usuario
 				for(int i = 0; i < timeline.size();i++){
 					if(timeline.get(i).getUsuario() == usuario){// timeline é um vector de tweet
@@ -96,8 +96,8 @@ public class MyTwitter implements ITwitter{
 			Perfil perfilSeguidor = repositorio.buscar(seguidor);
 			if(perfilSeguido.isAtivo() || perfilSeguidor.isAtivo()){
 				if(seguido != seguidor ){
-					perfilSeguido.addSeguidor(seguidor);
-					perfilSeguidor.addSeguido(seguido);
+					perfilSeguido.addSeguidor(perfilSeguidor);
+					perfilSeguidor.addSeguido(perfilSeguido);
 				}else{
 					throw new SIException(seguidor); //exceção SIException
 				}
@@ -131,8 +131,8 @@ public class MyTwitter implements ITwitter{
 		if(repositorio.buscar(usuario)!=null){
 			Perfil perfil = repositorio.buscar(usuario);
 			if(perfil.isAtivo()){
-				Vector<Perfil> seguidores = uperfil.getSeguidores();
-				Vector<Perfil> seguidoresAtivo = new Vector<Perfil>;
+				Vector<Perfil> seguidores = perfil.getSeguidores();
+				Vector<Perfil> seguidoresAtivo = new Vector<Perfil>();
 				for(int i = 0; i < seguidores.size(); i++) {
 					if(seguidores.get(i).isAtivo()) {
 						seguidoresAtivo.add(seguidores.get(i));
@@ -151,14 +151,14 @@ public class MyTwitter implements ITwitter{
 		if(repositorio.buscar(usuario)!=null){
 			Perfil perfil = repositorio.buscar(usuario);
 			if(perfil.isAtivo()){
-				Vector<Perfil> seguidos = uperfil.getSeguidores();
-				Vector<Perfil> seguidosAtivo = new Vector<Perfil>;
+				Vector<Perfil> seguidos = perfil.getSeguidores();
+				Vector<Perfil> seguidosAtivos = new Vector<Perfil>();
 				for(int i = 0; i < seguidos.size(); i++) {
 					if(seguidos.get(i).isAtivo()) {
 						seguidosAtivos.add(seguidos.get(i));
 					}
 				}
-				return seguidosAtivo;
+				return seguidosAtivos;
 			}else{
 				throw new PDException(usuario); //exceção PDException
 			}

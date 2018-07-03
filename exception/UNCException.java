@@ -6,7 +6,7 @@ public class UNCException extends java.lang.Exception{
 	private Perfil usuario;
 	
 	public UNCException (Perfil usuario) {
-		super("Usuario nao cadastrado!");
+		super("Usuario nao cadastrado");
 		this.usuario = usuario;
 	}
 	
