@@ -26,7 +26,6 @@ public class MyTwitter implements ITwitter{
 			Perfil perfil = repositorio.buscar(usuario);
 			if(perfil.isAtivo()){
 				perfil.setAtivo(false);
-				repositorio.atualizar(perfil);
 			}else{
 				throw new PDException(usuario); //exceção PDException
 			}
